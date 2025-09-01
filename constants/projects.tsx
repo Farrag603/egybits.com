@@ -16,7 +16,6 @@ export interface Project {
   solutions: string[];
   results: string[];
   images: string[];
-  videos: string[];
 }
 
 import { PROJECT_CATEGORIES } from "./project-categories";
@@ -40,7 +39,6 @@ export const createProjectTemplate = (): Partial<Project> => ({
   solutions: [],
   results: [],
   images: [],
-  videos: [],
 });
 
 // Import projects data from separate file
@@ -114,4 +112,15 @@ The main projects.tsx file contains:
 - Utility functions (getProjectsByCategory, etc.)
 
 The projects-data.tsx file contains:
-- The actual projects array with all project data*/
+- The actual projects array with all project data
+
+Project Structure:
+- ✅ Only screenshots/images are supported (no videos)
+- ✅ Use the images array for project screenshots
+- ✅ Provide challenges, solutions, and results for detailed view
+
+This separation makes it easier to manage:
+- ✅ Add new projects without touching utility functions
+- ✅ Cleaner code organization
+- ✅ Easier to maintain large numbers of projects
+*/

@@ -75,40 +75,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   </div>
                 </div>
               ))}
-
-              {/* Project Videos */}
-              {project.videos?.map((video: string, index: number) => (
-                <div key={`video-${index}`} className={styles.mediaItem}>
-                  <div className={styles.videoPlaceholder}>
-                    <div className={styles.iconContainer}>
-                      <svg
-                        className={styles.icon}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <p>Demo Video {index + 1}</p>
-                    </div>
-                    <div className={styles.playButton}>
-                      <svg
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 

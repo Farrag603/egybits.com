@@ -41,7 +41,6 @@ export const projects: Project[] = [
       "/images/projects/ecommerce/mobile.jpg",
       "/images/projects/ecommerce/admin.jpg",
     ],
-    videos: ["/videos/projects/ecommerce-demo.mp4"],
   },
   {
     id: "2",
@@ -78,7 +77,6 @@ export const projects: Project[] = [
       "/images/projects/healthcare/appointment.jpg",
       "/images/projects/healthcare/telemedicine.jpg",
     ],
-    videos: ["/videos/projects/healthcare-demo.mp4"],
   },
   {
     id: "3",
@@ -115,7 +113,6 @@ export const projects: Project[] = [
       "/images/projects/banking/transactions.jpg",
       "/images/projects/banking/insights.jpg",
     ],
-    videos: ["/videos/projects/banking-demo.mp4"],
   },
   {
     id: "4",
@@ -152,7 +149,6 @@ export const projects: Project[] = [
       "/images/projects/supply-chain/tracking.jpg",
       "/images/projects/supply-chain/analytics.jpg",
     ],
-    videos: ["/videos/projects/supply-chain-demo.mp4"],
   },
   {
     id: "5",
@@ -189,7 +185,6 @@ export const projects: Project[] = [
       "/images/projects/crm/leads.jpg",
       "/images/projects/crm/analytics.jpg",
     ],
-    videos: ["/videos/projects/crm-demo.mp4"],
   },
   {
     id: "6",
@@ -226,6 +221,5 @@ export const projects: Project[] = [
       "/images/projects/real-estate/virtual-tour.jpg",
       "/images/projects/real-estate/agent-portal.jpg",
     ],
-    videos: ["/videos/projects/real-estate-demo.mp4"],
   },
 ];
