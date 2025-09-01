@@ -67,7 +67,7 @@ export default function Home() {
         <Header />
         <Hero onLoadindComplete={() => setLoading(false)} />
         <Features />
-        <Team />
+        {/* <Team /> */}
         <Faq />
         <Testimonials />
         <Projects />

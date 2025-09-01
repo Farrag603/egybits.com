@@ -1,4 +1,4 @@
-@import @/styles/helpers
+@import "@/styles/helpers"
 
 .projectsPage
     min-height: 100vh
@@ -54,6 +54,7 @@
         width: 100%
         height: 100%
         opacity: 0.4
+        pointer-events: none
 
 .projectsGrid
     display: grid
@@ -261,3 +262,275 @@
     opacity: 0
     transition: opacity 0.3s ease
     pointer-events: none
+
+// ============================================
+// SEARCH AND FILTER STYLES
+// ============================================
+
+.filtersSection
+    margin-bottom: 48px
+    position: relative
+    z-index: 10
+    +t
+        margin-bottom: 40px
+    +m
+        margin-bottom: 32px
+
+.searchContainer
+    margin-bottom: 32px
+    +t
+        margin-bottom: 24px
+    +m
+        margin-bottom: 20px
+
+.searchBar
+    position: relative
+    max-width: 600px
+    margin: 0 auto
+    display: flex
+    align-items: center
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 16px
+    padding: 0 20px
+    transition: all 0.3s ease
+    
+    &:focus-within
+        border-color: $p4
+        box-shadow: 0 0 0 4px rgba(50, 216, 117, 0.1)
+    
+    +m
+        padding: 0 16px
+
+.searchIcon
+    width: 20px
+    height: 20px
+    color: $g4
+    margin-right: 12px
+    flex-shrink: 0
+    +m
+        width: 18px
+        height: 18px
+        margin-right: 10px
+
+.searchInput
+    flex: 1
+    background: transparent
+    border: none
+    outline: none
+    color: $g1
+    font-size: 16px
+    padding: 16px 0
+    
+    &::placeholder
+        color: white
+    
+    +m
+        font-size: 14px
+        padding: 14px 0
+
+.clearButton
+    background: none
+    border: none
+    color: $g4
+    cursor: pointer
+    padding: 4px
+    border-radius: 4px
+    transition: color 0.3s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    &:hover
+        color: $g2
+    
+    svg
+        width: 16px
+        height: 16px
+
+.categoryFilters
+    margin-bottom: 24px
+
+.filterHeader
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 16px
+    +m
+        flex-direction: column
+        align-items: flex-start
+        gap: 12px
+
+.filterLabel
+    color: $g2
+    font-size: 16px
+    font-weight: 500
+    +m
+        font-size: 14px
+
+.clearAllButton
+    background: rgba(255, 77, 77, 0.1)
+    border: 1px solid rgba(255, 77, 77, 0.2)
+    color: #ff4d4d
+    padding: 8px 16px
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+        background: rgba(255, 77, 77, 0.2)
+        border-color: rgba(255, 77, 77, 0.4)
+    
+    +m
+        padding: 6px 12px
+        font-size: 12px
+
+.categoryChips
+    display: flex
+    flex-wrap: wrap
+    gap: 12px
+    position: relative
+    z-index: 10
+    +m
+        gap: 8px
+
+.categoryChip
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 10px 16px
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 24px
+    color: white
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    pointer-events: auto
+    position: relative
+    z-index: 10
+    
+    &:hover
+        border-color: $p4
+        color: white
+        transform: translateY(-2px)
+    
+    &.active
+        background: $p4
+        border-color: $p4
+        color: black
+        
+        &:hover
+            transform: translateY(-2px)
+            box-shadow: 0 4px 12px rgba(50, 216, 117, 0.3)
+    
+    +m
+        padding: 8px 12px
+        font-size: 12px
+
+.chipIcon
+    width: 16px
+    height: 16px
+    +m
+        width: 14px
+        height: 14px
+
+.resultsInfo
+    text-align: center
+    margin-bottom: 32px
+
+.resultsCount
+    color: $g3
+    font-size: 15px
+    +m
+        font-size: 13px
+
+// No Results State
+.noResults
+    grid-column: 1 / -1
+    text-align: center
+    padding: 80px 20px
+    +t
+        padding: 60px 20px
+    +m
+        padding: 40px 20px
+
+.noResultsIcon
+    margin: 0 auto 24px
+    width: 80px
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 50%
+    
+    svg
+        width: 40px
+        height: 40px
+        color: $g4
+    
+    +t
+        width: 64px
+        height: 64px
+        margin-bottom: 20px
+        
+        svg
+            width: 32px
+            height: 32px
+    
+    +m
+        width: 48px
+        height: 48px
+        margin-bottom: 16px
+        
+        svg
+            width: 24px
+            height: 24px
+
+.noResultsTitle
+    margin-bottom: 12px
+    color: $g1
+    font-size: 24px
+    font-weight: 600
+    +t
+        font-size: 20px
+    +m
+        font-size: 18px
+
+.noResultsText
+    margin-bottom: 24px
+    color: $g3
+    font-size: 16px
+    line-height: 1.5
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto
+    +t
+        font-size: 15px
+    +m
+        font-size: 14px
+        margin-bottom: 20px
+
+.clearFiltersButton
+    background: $p4
+    border: none
+    color: black
+    padding: 12px 24px
+    border-radius: 12px
+    font-size: 15px
+    font-weight: 600
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 8px 20px rgba(50, 216, 117, 0.3)
+    
+    +m
+        padding: 10px 20px
+        font-size: 14px

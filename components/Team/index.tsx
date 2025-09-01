@@ -15,7 +15,8 @@ const Team = ({}: Props) => {
         <div className={styles.head}>
           <h2 className={styles.title}>Meet Our Expert Team</h2>
           <p className={styles.subtitle}>
-            The talented professionals behind Update&apos;s innovative solutions
+            The talented professionals behind EgyBits&apos;s innovative
+            solutions
           </p>
           <div className={styles.background}>
             <Image

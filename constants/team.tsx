@@ -6,7 +6,7 @@ export const teamMembers = [
     image: "/images/team/ahmed.jpg",
     shortDescription: "Visionary leader with 10+ years in software development",
     longDescription:
-      "Ahmed founded Update with a vision to transform businesses through innovative technology. With over 10 years of experience in software architecture and team leadership, he has successfully delivered 200+ projects across various industries. His expertise spans full-stack development, cloud solutions, and AI implementation.",
+      "Ahmed founded EgyBits with a vision to transform businesses through innovative technology. With over 10 years of experience in software architecture and team leadership, he has successfully delivered 200+ projects across various industries. His expertise spans full-stack development, cloud solutions, and AI implementation.",
   },
   {
     id: "2",
