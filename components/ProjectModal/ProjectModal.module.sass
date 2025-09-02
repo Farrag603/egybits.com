@@ -142,6 +142,84 @@
     +m
         height: 160px
 
+.imageContainer
+    position: relative
+    width: 100%
+    height: 200px
+    overflow: hidden
+    border-radius: 16px
+    cursor: pointer
+    +t
+        height: 180px
+    +m
+        height: 160px
+        
+    &:hover
+        .clickHint
+            opacity: 1
+        
+        .projectImage
+            transform: scale(1.05)
+
+.projectImage
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 16px
+    transition: transform 0.3s ease
+    
+    &:hover
+        transform: scale(1.05)
+
+.imageOverlay
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%)
+    padding: 16px
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    +m
+        padding: 12px
+
+.imageCaption
+    color: white
+    font-size: 14px
+    font-weight: 500
+    text-align: center
+    margin: 0
+    +m
+        font-size: 12px
+
+.clickHint
+    position: absolute
+    top: 16px
+    right: 16px
+    width: 32px
+    height: 32px
+    background: rgba(0, 0, 0, 0.6)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    opacity: 0
+    transition: opacity 0.3s ease
+    +m
+        width: 28px
+        height: 28px
+        top: 12px
+        right: 12px
+        
+    svg
+        width: 16px
+        height: 16px
+        +m
+            width: 14px
+            height: 14px
+
 .videoPlaceholder
     background: linear-gradient(135deg, $s1, $p4)
     cursor: pointer
@@ -370,3 +448,140 @@
     line-height: 1.4
     +m
         font-size: 14px
+
+// ============================================
+// LIGHTBOX STYLES
+// ============================================
+
+.lightboxBackdrop
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.95)
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 2000
+    padding: 20px
+    backdrop-filter: blur(10px)
+
+.lightboxContainer
+    position: relative
+    max-width: 95vw
+    max-height: 95vh
+    display: flex
+    align-items: center
+    justify-content: center
+
+.lightboxImageContainer
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 100%
+    max-height: 100%
+
+.lightboxImage
+    max-width: 100%
+    max-height: 95vh
+    width: auto
+    height: auto
+    object-fit: contain
+    border-radius: 12px
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8)
+
+.lightboxClose
+    position: absolute
+    top: -60px
+    right: 0
+    width: 48px
+    height: 48px
+    background: rgba(255, 255, 255, 0.1)
+    border: 2px solid rgba(255, 255, 255, 0.2)
+    border-radius: 50%
+    color: white
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.3s ease
+    z-index: 10
+    
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        border-color: rgba(255, 255, 255, 0.4)
+        transform: scale(1.1)
+    
+    +m
+        top: -50px
+        width: 40px
+        height: 40px
+        
+    svg
+        width: 24px
+        height: 24px
+        +m
+            width: 20px
+            height: 20px
+
+.navButton
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 64px
+    height: 64px
+    background: rgba(255, 255, 255, 0.1)
+    border: 2px solid rgba(255, 255, 255, 0.2)
+    border-radius: 50%
+    color: white
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.3s ease
+    z-index: 10
+    
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        border-color: rgba(255, 255, 255, 0.4)
+        transform: translateY(-50%) scale(1.1)
+    
+    +m
+        width: 48px
+        height: 48px
+        
+    svg
+        width: 28px
+        height: 28px
+        +m
+            width: 22px
+            height: 22px
+
+.navPrev
+    left: -100px
+    +m
+        left: -70px
+
+.navNext
+    right: -100px
+    +m
+        right: -70px
+
+.imageCounter
+    position: absolute
+    bottom: -60px
+    left: 50%
+    transform: translateX(-50%)
+    background: rgba(0, 0, 0, 0.8)
+    color: white
+    padding: 8px 16px
+    border-radius: 20px
+    font-size: 14px
+    font-weight: 500
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    +m
+        bottom: -50px
+        font-size: 12px
+        padding: 6px 12px
