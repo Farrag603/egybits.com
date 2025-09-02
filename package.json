@@ -1,9 +1,13 @@
 {
-  "name": "xora",
+  "name": "egybits",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:frontend": "next dev",
+    "dev:backend": "cd Update_Backend && npm run dev",
+    "dev:both": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "install:backend": "cd Update_Backend && npm install",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,15 +23,18 @@
     "classnames": "^2.3.2",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
+    "next": "^13.5.11",
     "react": "18.2.0",
+    "react-collapse": "^5.1.1",
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
     "react-scroll": "^1.8.9",
-    "react-slidedown": "^2.4.7",
     "sass": "^1.66.1",
     "scroll-lock": "^2.1.5",
-    "typescript": "5.2.2",
-    "yarn": "^1.22.19"
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/react-collapse": "^5.0.4",
+    "concurrently": "^9.2.0"
   }
 }

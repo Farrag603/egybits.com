@@ -1,0 +1,564 @@
+@import "@/styles/helpers"
+
+.projectsPage
+    min-height: 100vh
+    padding: 120px 0 80px
+    background: $g7
+    +t
+        padding: 100px 0 64px
+    +m
+        padding: 80px 0 48px
+
+.header
+    position: relative
+    text-align: center
+    margin-bottom: 80px
+    +t
+        margin-bottom: 64px
+    +m
+        margin-bottom: 48px
+
+.title
+    margin-bottom: 24px
+    color: $g1
+    +h1
+    +t
+        font-size: 48px
+    +m
+        font-size: 36px
+
+.subtitle
+    max-width: 640px
+    margin: 0 auto
+    color: $g4
+    font-size: 18px
+    line-height: 1.6
+    +t
+        font-size: 16px
+    +m
+        font-size: 15px
+
+.background
+    position: absolute
+    top: -60px
+    left: 50%
+    width: 960px
+    height: 380px
+    pointer-events: none
+    transform: translateX(-50%)
+    z-index: -1
+    img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0.4
+        pointer-events: none
+
+.projectsGrid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr))
+    gap: 32px
+    +t
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+        gap: 24px
+    +m
+        grid-template-columns: 1fr
+        gap: 20px
+
+.projectCard
+    position: relative
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 24px
+    padding: 32px
+    cursor: pointer
+    transition: all 0.3s ease
+    overflow: hidden
+    
+    &:hover
+        transform: translateY(-8px)
+        border-color: $p4
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+        
+        .cardOverlay
+            opacity: 1
+            
+        .viewButton
+           
+            transform: translateX(8px)
+
+    +t
+        padding: 24px
+    +m
+        padding: 20px
+
+.imageContainer
+    position: relative
+    margin-bottom: 24px
+    +m
+        margin-bottom: 20px
+
+.imagePlaceholder
+    width: 100%
+    height: 200px
+    border-radius: 16px
+    background: linear-gradient(135deg, $p4, $s1)
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 2px solid rgba(255, 255, 255, 0.1)
+    +t
+        height: 180px
+    +m
+        height: 160px
+
+.projectImage
+    width: 100%
+    height: 200px
+    object-fit: cover
+    border-radius: 16px
+    border: 2px solid rgba(255, 255, 255, 0.1)
+    transition: transform 0.3s ease
+    +t
+        height: 180px
+    +m
+        height: 160px
+
+.imageOverlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 50%)
+    border-radius: 16px
+    padding: 16px
+    +m
+        padding: 12px
+
+.iconContainer
+    text-align: center
+
+.iconBox
+    width: 60px
+    height: 60px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 8px
+    +t
+        width: 50px
+        height: 50px
+    +m
+        width: 40px
+        height: 40px
+
+.icon
+    width: 40px
+    height: 40px
+    color: white
+    +t
+        width: 32px
+        height: 32px
+    +m
+        width: 24px
+        height: 24px
+
+.categoryText
+    color: white
+    font-size: 14px
+    font-weight: 500
+    +m
+        font-size: 12px
+
+.projectContent
+    position: relative
+    z-index: 2
+
+.projectTitle
+    margin-bottom: 12px
+    color: $g1
+    font-size: 24px
+    font-weight: 600
+    line-height: 1.3
+    +t
+        font-size: 20px
+    +m
+        font-size: 18px
+
+.projectDescription
+    margin-bottom: 20px
+    color: $g3
+    font-size: 15px
+    line-height: 1.5
+    +t
+        font-size: 14px
+    +m
+        font-size: 13px
+
+.projectMeta
+    display: flex
+    gap: 24px
+    margin-bottom: 20px
+    +m
+        flex-direction: column
+        gap: 8px
+
+.metaItem
+    display: flex
+    align-items: center
+    gap: 8px
+
+.metaLabel
+    color: $g4
+    font-size: 13px
+    font-weight: 500
+    +m
+        font-size: 12px
+
+.metaValue
+    color: $g2
+    font-size: 13px
+    +m
+        font-size: 12px
+
+.technologies
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+    margin-bottom: 24px
+
+.techTag
+    padding: 4px 12px
+    background: rgba(50, 216, 117, 0.1)
+    border: 1px solid rgba(50, 216, 117, 0.2)
+    border-radius: 20px
+    color: white
+    font-size: 12px
+    font-weight: 500
+    +m
+        font-size: 11px
+        padding: 3px 10px
+
+.cardFooter
+    display: flex
+    justify-content: flex-end
+
+.viewButton
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 12px 20px
+    background: rgba(29, 46, 86, 0.8)
+    border: 1px solid $p4
+    border-radius: 12px
+    color: white
+    font-size: 14px
+    font-weight: 500
+    transition: all 0.3s ease
+    cursor: pointer
+    
+    &:hover
+        background: $p4
+        color: black
+        
+    +m
+        font-size: 13px
+        padding: 10px 16px
+
+.arrowIcon
+    width: 16px
+    height: 16px
+    transition: transform 0.3s ease
+    +m
+        width: 14px
+        height: 14px
+
+.cardOverlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(135deg, rgba(29, 46, 86, 0.1), rgba(50, 216, 117, 0.05))
+    border-radius: 24px
+    opacity: 0
+    transition: opacity 0.3s ease
+    pointer-events: none
+
+// ============================================
+// SEARCH AND FILTER STYLES
+// ============================================
+
+.filtersSection
+    margin-bottom: 48px
+    position: relative
+    z-index: 10
+    +t
+        margin-bottom: 40px
+    +m
+        margin-bottom: 32px
+
+.searchContainer
+    margin-bottom: 32px
+    +t
+        margin-bottom: 24px
+    +m
+        margin-bottom: 20px
+
+.searchBar
+    position: relative
+    max-width: 600px
+    margin: 0 auto
+    display: flex
+    align-items: center
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 16px
+    padding: 0 20px
+    transition: all 0.3s ease
+    
+    &:focus-within
+        border-color: $p4
+        box-shadow: 0 0 0 4px rgba(50, 216, 117, 0.1)
+    
+    +m
+        padding: 0 16px
+
+.searchIcon
+    width: 20px
+    height: 20px
+    color: $g4
+    margin-right: 12px
+    flex-shrink: 0
+    +m
+        width: 18px
+        height: 18px
+        margin-right: 10px
+
+.searchInput
+    flex: 1
+    background: transparent
+    border: none
+    outline: none
+    color: $g1
+    font-size: 16px
+    padding: 16px 0
+    
+    &::placeholder
+        color: white
+    
+    +m
+        font-size: 14px
+        padding: 14px 0
+
+.clearButton
+    background: none
+    border: none
+    color: $g4
+    cursor: pointer
+    padding: 4px
+    border-radius: 4px
+    transition: color 0.3s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    &:hover
+        color: $g2
+    
+    svg
+        width: 16px
+        height: 16px
+
+.categoryFilters
+    margin-bottom: 24px
+
+.filterHeader
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 16px
+    +m
+        flex-direction: column
+        align-items: flex-start
+        gap: 12px
+
+.filterLabel
+    color: $g2
+    font-size: 16px
+    font-weight: 500
+    +m
+        font-size: 14px
+
+.clearAllButton
+    background: rgba(255, 77, 77, 0.1)
+    border: 1px solid rgba(255, 77, 77, 0.2)
+    color: #ff4d4d
+    padding: 8px 16px
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+        background: rgba(255, 77, 77, 0.2)
+        border-color: rgba(255, 77, 77, 0.4)
+    
+    +m
+        padding: 6px 12px
+        font-size: 12px
+
+.categoryChips
+    display: flex
+    flex-wrap: wrap
+    gap: 12px
+    position: relative
+    z-index: 10
+    +m
+        gap: 8px
+
+.categoryChip
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 10px 16px
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 24px
+    color: white
+    font-size: 14px
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    pointer-events: auto
+    position: relative
+    z-index: 10
+    
+    &:hover
+        border-color: $p4
+        color: white
+        transform: translateY(-2px)
+    
+    &.active
+        background: $p4
+        border-color: $p4
+        color: black
+        
+        &:hover
+            transform: translateY(-2px)
+            box-shadow: 0 4px 12px rgba(50, 216, 117, 0.3)
+    
+    +m
+        padding: 8px 12px
+        font-size: 12px
+
+.chipIcon
+    width: 16px
+    height: 16px
+    +m
+        width: 14px
+        height: 14px
+
+.resultsInfo
+    text-align: center
+    margin-bottom: 32px
+
+.resultsCount
+    color: $g3
+    font-size: 15px
+    +m
+        font-size: 13px
+
+// No Results State
+.noResults
+    grid-column: 1 / -1
+    text-align: center
+    padding: 80px 20px
+    +t
+        padding: 60px 20px
+    +m
+        padding: 40px 20px
+
+.noResultsIcon
+    margin: 0 auto 24px
+    width: 80px
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 50%
+    
+    svg
+        width: 40px
+        height: 40px
+        color: $g4
+    
+    +t
+        width: 64px
+        height: 64px
+        margin-bottom: 20px
+        
+        svg
+            width: 32px
+            height: 32px
+    
+    +m
+        width: 48px
+        height: 48px
+        margin-bottom: 16px
+        
+        svg
+            width: 24px
+            height: 24px
+
+.noResultsTitle
+    margin-bottom: 12px
+    color: $g1
+    font-size: 24px
+    font-weight: 600
+    +t
+        font-size: 20px
+    +m
+        font-size: 18px
+
+.noResultsText
+    margin-bottom: 24px
+    color: $g3
+    font-size: 16px
+    line-height: 1.5
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto
+    +t
+        font-size: 15px
+    +m
+        font-size: 14px
+        margin-bottom: 20px
+
+.clearFiltersButton
+    background: $p4
+    border: none
+    color: black
+    padding: 12px 24px
+    border-radius: 12px
+    font-size: 15px
+    font-weight: 600
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 8px 20px rgba(50, 216, 117, 0.3)
+    
+    +m
+        padding: 10px 20px
+        font-size: 14px

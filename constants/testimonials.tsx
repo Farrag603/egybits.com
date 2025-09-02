@@ -1,50 +1,50 @@
 export const testimonials = [
-    {
-        id: "0",
-        name: "Jessica Saunders",
-        role: "Globalnomads",
-        avatarUrl: "/images/testimonials/jessica-saunders.png",
-        comment:
-            "Xora's customer support is second to none! They’re like my tech superheroes, always there when I need them.",
-    },
-    {
-        id: "1",
-        name: "Mark Erixon",
-        role: "Vid capital intl",
-        avatarUrl: "/images/testimonials/mark-erixon.png",
-        comment:
-            "I was skeptical at first, but now I can't imagine our content operations without it. It's that impactful.",
-    },
-    {
-        id: "2",
-        name: "Melanie Hurst",
-        role: "Cyberleap",
-        avatarUrl: "/images/testimonials/melanie-hurst.png",
-        comment:
-            "Adopting this software was a breeze. It's made everyday tasks so much simpler.",
-    },
-    {
-        id: "3",
-        name: "Alicia Barker",
-        role: "Cyberleap",
-        avatarUrl: "/images/testimonials/alicia-barker.png",
-        comment:
-            "The analytics feature is like having a personal fortune teller. It's been instrumental in guiding our business decisions.",
-    },
-    {
-        id: "4",
-        name: "Becky Snider",
-        role: "Floclips",
-        avatarUrl: "/images/testimonials/becky-snider.png",
-        comment:
-            "Switched to Xora last month, and I'm already seeing results. Best decision for our team!",
-    },
-    {
-        id: "5",
-        name: "Jim Bradley",
-        role: "Vid capital intl",
-        avatarUrl: "/images/testimonials/jim-bradley.png",
-        comment:
-            "The efficiency boost is undeniable. This platform has transformed our workflow, forever.",
-    },
+  {
+    id: "0",
+    name: "Sarah Johnson",
+    role: "CEO, TechFlow Solutions",
+    avatarUrl: "/images/testimonials/jessica-saunders.png",
+    comment:
+      "EgyBits delivered our e-commerce platform ahead of schedule and within budget. Their attention to detail and professional approach exceeded our expectations.",
+  },
+  {
+    id: "1",
+    name: "Ahmed Hassan",
+    role: "CTO, Digital Innovations",
+    avatarUrl: "/images/testimonials/mark-erixon.png",
+    comment:
+      "The mobile app they developed for us has increased our user engagement by 300%. EgyBits's team truly understands modern software architecture.",
+  },
+  {
+    id: "2",
+    name: "Emily Chen",
+    role: "Product Manager, StartupHub",
+    avatarUrl: "/images/testimonials/melanie-hurst.png",
+    comment:
+      "Working with EgyBits was seamless from day one. They took our complex requirements and turned them into an elegant, scalable solution.",
+  },
+  {
+    id: "3",
+    name: "Michael Rodriguez",
+    role: "Operations Director, LogiTech Corp",
+    avatarUrl: "/images/testimonials/alicia-barker.png",
+    comment:
+      "The custom analytics dashboard EgyBits built has revolutionized how we make business decisions. The insights are incredible and actionable.",
+  },
+  {
+    id: "4",
+    name: "Lisa Thompson",
+    role: "Founder, GreenEarth Initiative",
+    avatarUrl: "/images/testimonials/becky-snider.png",
+    comment:
+      "EgyBits transformed our manual processes into an automated system that saves us 20 hours per week. ROI was immediate.",
+  },
+  {
+    id: "5",
+    name: "David Park",
+    role: "IT Director, FinanceFirst",
+    avatarUrl: "/images/testimonials/jim-bradley.png",
+    comment:
+      "Their cloud migration strategy was flawless. Zero downtime and improved performance by 40%. EgyBits delivers on their promises.",
+  },
 ];

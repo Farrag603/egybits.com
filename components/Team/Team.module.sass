@@ -1,0 +1,207 @@
+@import @/styles/helpers
+
+.head
+    position: relative
+    padding: 96px 0 80px
+    text-align: center
+    +t
+        padding: 80px 0 64px
+    +m
+        padding: 64px 0 48px
+
+.title
+    margin-bottom: 16px
+    +h2
+
+.subtitle
+    max-width: 512px
+    margin: 0 auto 64px
+    color: $g4
+    +body-1
+    +t
+        margin-bottom: 48px
+    +m
+        margin-bottom: 32px
+
+.background
+    position: absolute
+    top: 0
+    left: 50%
+    width: 960px
+    height: 380px
+    pointer-events: none
+    transform: translateX(-50%)
+    z-index: -1
+    img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0.4
+
+.teamGrid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+    gap: 32px
+    +t
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+        gap: 24px
+    +m
+        grid-template-columns: 1fr
+        gap: 20px
+
+.memberCard
+    position: relative
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 24px
+    padding: 32px
+    text-align: center
+    transition: all 0.3s ease
+    overflow: hidden
+    cursor: pointer
+    
+    &:hover
+        transform: translateY(-8px)
+        border-color: $p4
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+        
+        .longDesc
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+            
+        .shortDesc
+            opacity: 0
+            transform: translateY(-10px)
+            
+        .overlay
+            opacity: 1
+
+    +t
+        padding: 24px
+    +m
+        padding: 20px
+
+.imageContainer
+    margin-bottom: 24px
+    +m
+        margin-bottom: 20px
+
+.imagePlaceholder
+    width: 120px
+    height: 120px
+    margin: 0 auto
+    border-radius: 50%
+    background: linear-gradient(135deg, $p4, $s1)
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 3px solid rgba(255, 255, 255, 0.1)
+    +t
+        width: 100px
+        height: 100px
+    +m
+        width: 80px
+        height: 80px
+
+.iconContainer
+    text-align: center
+
+.iconBox
+    width: 60px
+    height: 60px
+    display: flex
+    align-items: center
+    justify-content: center
+    +t
+        width: 50px
+        height: 50px
+    +m
+        width: 40px
+        height: 40px
+
+.icon
+    width: 40px
+    height: 40px
+    color: white
+    +t
+        width: 32px
+        height: 32px
+    +m
+        width: 24px
+        height: 24px
+
+.memberInfo
+    position: relative
+    z-index: 2
+
+.memberName
+    margin-bottom: 8px
+    color: $g1
+    font-size: 24px
+    font-weight: 600
+    line-height: 1.2
+    +t
+        font-size: 20px
+    +m
+        font-size: 18px
+
+.memberRole
+    margin-bottom: 16px
+    color: $p4
+    font-size: 16px
+    font-weight: 500
+    +t
+        font-size: 14px
+    +m
+        font-size: 13px
+
+.description
+    position: relative
+    min-height: 60px
+    +m
+        min-height: 50px
+
+.shortDesc
+    color: $g4
+    font-size: 15px
+    line-height: 1.4
+    transition: all 0.3s ease
+    +t
+        font-size: 14px
+    +m
+        font-size: 13px
+
+.longDesc
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    opacity: 0
+    visibility: hidden
+    transform: translateY(10px)
+    transition: all 0.3s ease
+    
+    p
+        color: $g3
+        font-size: 14px
+        line-height: 1.5
+        text-align: left
+        +t
+            font-size: 13px
+        +m
+            font-size: 12px
+
+.overlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(135deg, rgba(29, 46, 86, 0.1), rgba(50, 216, 117, 0.05))
+    border-radius: 24px
+    opacity: 0
+    transition: opacity 0.3s ease
+    pointer-events: none

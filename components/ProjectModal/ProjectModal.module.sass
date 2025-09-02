@@ -1,0 +1,587 @@
+@import @/styles/helpers
+
+.modalBackdrop
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.8)
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 1000
+    padding: 20px
+    backdrop-filter: blur(8px)
+
+.modalContainer
+    background: $g7
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 24px
+    width: 100%
+    max-width: 1200px
+    max-height: 90vh
+    overflow: hidden
+    position: relative
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5)
+    +t
+        max-width: 900px
+    +m
+        max-width: 100%
+        max-height: 95vh
+        border-radius: 16px
+
+.modalHeader
+    display: flex
+    align-items: center
+    justify-content: between
+    padding: 32px 32px 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+    +t
+        padding: 24px 24px 0
+    +m
+        padding: 20px 20px 0
+
+.modalTitle
+    color: $g1
+    font-size: 32px
+    font-weight: 600
+    line-height: 1.2
+    +t
+        font-size: 28px
+    +m
+        font-size: 24px
+
+.closeButton 
+    margin:8px
+    padding: 8px
+    background: rgba(255, 255, 255, 0.1)
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    border-radius: 12px
+    color: $g3
+    cursor: pointer
+    transition: all 0.3s ease
+    
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        color: $g1
+
+.modalContent
+    padding: 32px
+    max-height: calc(90vh - 100px)
+    overflow-y: auto
+    
+    // Custom scrollbar
+    &::-webkit-scrollbar
+        width: 8px
+    
+    &::-webkit-scrollbar-track
+        background: rgba(255, 255, 255, 0.05)
+        border-radius: 4px
+    
+    &::-webkit-scrollbar-thumb
+        background: rgba(50, 216, 117, 0.3)
+        border-radius: 4px
+        
+        &:hover
+            background: rgba(50, 216, 117, 0.5)
+    
+    +t
+        padding: 24px
+    +m
+        padding: 20px
+
+.mediaSection
+    margin-bottom: 48px
+    +m
+        margin-bottom: 32px
+
+.sectionTitle
+    color: $g1
+    font-size: 24px
+    font-weight: 600
+    margin-bottom: 24px
+    +t
+        font-size: 20px
+    +m
+        font-size: 18px
+        margin-bottom: 20px
+
+.mediaGrid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    gap: 24px
+    +t
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+        gap: 20px
+    +m
+        grid-template-columns: 1fr
+        gap: 16px
+
+.mediaItem
+    border-radius: 16px
+    overflow: hidden
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    transition: all 0.3s ease
+    
+    &:hover
+        border-color: $p4
+        transform: translateY(-4px)
+
+.imagePlaceholder, .videoPlaceholder
+    position: relative
+    width: 100%
+    height: 200px
+    background: linear-gradient(135deg, $p4, $s1)
+    display: flex
+    align-items: center
+    justify-content: center
+    +t
+        height: 180px
+    +m
+        height: 160px
+
+.imageContainer
+    position: relative
+    width: 100%
+    height: 200px
+    overflow: hidden
+    border-radius: 16px
+    cursor: pointer
+    +t
+        height: 180px
+    +m
+        height: 160px
+        
+    &:hover
+        .clickHint
+            opacity: 1
+        
+        .projectImage
+            transform: scale(1.05)
+
+.projectImage
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 16px
+    transition: transform 0.3s ease
+    
+    &:hover
+        transform: scale(1.05)
+
+.imageOverlay
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%)
+    padding: 16px
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    +m
+        padding: 12px
+
+.imageCaption
+    color: white
+    font-size: 14px
+    font-weight: 500
+    text-align: center
+    margin: 0
+    +m
+        font-size: 12px
+
+.clickHint
+    position: absolute
+    top: 16px
+    right: 16px
+    width: 32px
+    height: 32px
+    background: rgba(0, 0, 0, 0.6)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    opacity: 0
+    transition: opacity 0.3s ease
+    +m
+        width: 28px
+        height: 28px
+        top: 12px
+        right: 12px
+        
+    svg
+        width: 16px
+        height: 16px
+        +m
+            width: 14px
+            height: 14px
+
+.videoPlaceholder
+    background: linear-gradient(135deg, $s1, $p4)
+    cursor: pointer
+    
+    &:hover .playButton
+        transform: scale(1.1)
+
+.iconContainer
+    text-align: center
+    
+    p
+        color: white
+        font-size: 14px
+        font-weight: 500
+        margin-top: 8px
+        +m
+            font-size: 12px
+
+.icon
+    width: 48px
+    height: 48px
+    color: white
+    margin-bottom: 8px
+    +t
+        width: 40px
+        height: 40px
+    +m
+        width: 32px
+        height: 32px
+
+.playButton
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 64px
+    height: 64px
+    background: rgba(255, 255, 255, 0.9)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $g7
+    transition: all 0.3s ease
+    +t
+        width: 56px
+        height: 56px
+    +m
+        width: 48px
+        height: 48px
+
+.detailsSection
+    display: flex
+    flex-direction: column
+    gap: 48px
+    +m
+        gap: 32px
+
+.projectOverview
+    .detailedDescription
+        color: $g3
+        font-size: 16px
+        line-height: 1.6
+        margin-bottom: 32px
+        +t
+            font-size: 15px
+        +m
+            font-size: 14px
+            margin-bottom: 24px
+
+.projectMeta
+    .metaGrid
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+        gap: 16px
+        +m
+            grid-template-columns: repeat(2, 1fr)
+
+.metaItem
+    padding: 16px
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 12px
+    +m
+        padding: 12px
+
+.metaLabel
+    display: block
+    color: $g4
+    font-size: 12px
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 0.5px
+    margin-bottom: 4px
+
+.metaValue
+    color: $g1
+    font-size: 16px
+    font-weight: 600
+    +t
+        font-size: 15px
+    +m
+        font-size: 14px
+
+.technologiesSection
+    .techGrid
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+        gap: 12px
+        +m
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+
+.techCard
+    padding: 12px 16px
+    background: rgba(50, 216, 117, 0.1)
+    border: 1px solid rgba(50, 216, 117, 0.2)
+    border-radius: 12px
+    text-align: center
+    transition: all 0.3s ease
+    
+    &:hover
+        background: rgba(50, 216, 117, 0.2)
+        transform: translateY(-2px)
+    
+    +m
+        padding: 10px 12px
+
+.techName
+    color: white
+    font-size: 14px
+    font-weight: 500
+    +m
+        font-size: 13px
+
+.challengesSection
+    .challengesGrid
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 32px
+        +m
+            grid-template-columns: 1fr
+            gap: 24px
+
+.challengesColumn, .solutionsColumn
+    padding: 24px
+    background: rgba(255, 255, 255, 0.02)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 16px
+    +m
+        padding: 20px
+
+.challengesColumn
+    border-left: 4px solid rgba(255, 107, 107, 0.5)
+
+.solutionsColumn
+    border-left: 4px solid rgba(50, 216, 117, 0.5)
+
+.itemsList
+    list-style: none
+    padding: 0
+    margin: 0
+
+.listItem
+    display: flex
+    align-items: flex-start
+    gap: 12px
+    color: $g3
+    font-size: 15px
+    line-height: 1.5
+    margin-bottom: 16px
+    
+    &:last-child
+        margin-bottom: 0
+    
+    +m
+        font-size: 14px
+
+.bulletPoint
+    font-size: 16px
+    margin-top: 2px
+    flex-shrink: 0
+
+.resultsSection
+    .resultsGrid
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        gap: 20px
+        +m
+            grid-template-columns: 1fr
+
+.resultCard
+    display: flex
+    align-items: center
+    gap: 16px
+    padding: 20px
+    background: rgba(50, 216, 117, 0.05)
+    border: 1px solid rgba(50, 216, 117, 0.2)
+    border-radius: 12px
+    transition: all 0.3s ease
+    
+    &:hover
+        background: rgba(50, 216, 117, 0.1)
+        transform: translateY(-2px)
+    
+    +m
+        padding: 16px
+
+.resultIcon
+    flex-shrink: 0
+    width: 40px
+    height: 40px
+    background: rgba(50, 216, 117, 0.2)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    +m
+        width: 32px
+        height: 32px
+
+.resultText
+    color: $g2
+    font-size: 15px
+    font-weight: 500
+    line-height: 1.4
+    +m
+        font-size: 14px
+
+// ============================================
+// LIGHTBOX STYLES
+// ============================================
+
+.lightboxBackdrop
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.95)
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 2000
+    padding: 20px
+    backdrop-filter: blur(10px)
+
+.lightboxContainer
+    position: relative
+    max-width: 95vw
+    max-height: 95vh
+    display: flex
+    align-items: center
+    justify-content: center
+
+.lightboxImageContainer
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 100%
+    max-height: 100%
+
+.lightboxImage
+    max-width: 100%
+    max-height: 95vh
+    width: auto
+    height: auto
+    object-fit: contain
+    border-radius: 12px
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8)
+
+.lightboxClose
+    position: absolute
+    top: -60px
+    right: 0
+    width: 48px
+    height: 48px
+    background: rgba(255, 255, 255, 0.1)
+    border: 2px solid rgba(255, 255, 255, 0.2)
+    border-radius: 50%
+    color: white
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.3s ease
+    z-index: 10
+    
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        border-color: rgba(255, 255, 255, 0.4)
+        transform: scale(1.1)
+    
+    +m
+        top: -50px
+        width: 40px
+        height: 40px
+        
+    svg
+        width: 24px
+        height: 24px
+        +m
+            width: 20px
+            height: 20px
+
+.navButton
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 64px
+    height: 64px
+    background: rgba(255, 255, 255, 0.1)
+    border: 2px solid rgba(255, 255, 255, 0.2)
+    border-radius: 50%
+    color: white
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.3s ease
+    z-index: 10
+    
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        border-color: rgba(255, 255, 255, 0.4)
+        transform: translateY(-50%) scale(1.1)
+    
+    +m
+        width: 48px
+        height: 48px
+        
+    svg
+        width: 28px
+        height: 28px
+        +m
+            width: 22px
+            height: 22px
+
+.navPrev
+    left: -100px
+    +m
+        left: -70px
+
+.navNext
+    right: -100px
+    +m
+        right: -70px
+
+.imageCounter
+    position: absolute
+    bottom: -60px
+    left: 50%
+    transform: translateX(-50%)
+    background: rgba(0, 0, 0, 0.8)
+    color: white
+    padding: 8px 16px
+    border-radius: 20px
+    font-size: 14px
+    font-weight: 500
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    +m
+        bottom: -50px
+        font-size: 12px
+        padding: 6px 12px
