@@ -6,8 +6,7 @@ import styles from "./projects.module.sass";
 import Container from "@/components/Container";
 import { getAllCategories, Project } from "@/constants/projects";
 import { projects } from "@/constants/projects-data";
-import ProjectModal from "@/components/ProjectModal";
-import ProjectsContent from "@/components/Projects/ProjectsContent";
+import ProjectModal from "../../components/ProjectModal";
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
