@@ -29,7 +29,7 @@ export const createProjectTemplate = (): Partial<Project> => ({
   shortDescription: "",
   image: "/images/projects/placeholder.jpg", // Default placeholder
   technologies: [],
-  category: PROJECT_CATEGORIES.WEB_APP, // Default category
+  category: PROJECT_CATEGORIES.ENTERPRISE, // Default category
   client: "",
   duration: "",
   teamSize: "",
