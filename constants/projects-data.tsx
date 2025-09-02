@@ -1,0 +1,310 @@
+import { Project } from "./projects";
+import { PROJECT_CATEGORIES } from "./project-categories";
+
+// ============================================
+// PROJECTS DATA - Add your projects here
+// ============================================
+
+export const projects: Project[] = [
+  {
+    id: "1",
+    title: "Thiqah – Real Estate & Interior Design",
+    description:
+      "Thiqah – Real Estate & Interior Design Services appears to be a sleek, professional hub offering integrated solutions in the realms of property development and interior design. It likely presents its offerings through elegant visuals and curated content, showcasing both real estate projects and tailored interior design services aimed at clients seeking thoughtful, high-quality environments.",
+    shortDescription:
+      "Thiqah provides professional real estate and interior design services, offering stylish property solutions and customized design experiences.",
+    image: "/images/projects/thiqahmain.png",
+    technologies: [
+      "React",
+      "Tailwind Css",
+      "Typescript",
+      "Node js",
+      "Express",
+      "MongoDB",
+      "Stripe",
+    ],
+    category: PROJECT_CATEGORIES.REAL_ESTATE,
+    client: "Ahmed Elsayed",
+    duration: "2 weeks",
+    teamSize: "3 developers",
+    link: "https://thiqah.vercel.app/",
+    detailedDescription:
+      "Thiqah is a modern platform dedicated to delivering high-quality real estate and interior design services. The website highlights a professional brand identity, combining property development expertise with creative interior solutions. It was built with a focus on sleek design, responsive layouts, and user-friendly navigation to reflect the premium nature of the services offered. Thiqah's digital presence is designed to instill trust, showcase projects, and provide an easy entry point for potential clients to explore services and get in touch.",
+    challenges: [
+      "Needed a strong online presence to reflect credibility and professionalism in the real estate and design industries.",
+      "Difficulty in presenting both real estate projects and interior design services in a single platform without overwhelming users.",
+      "Requirement for a responsive, fast-loading website to engage clients across devices.",
+      "Ensuring the brand identity conveys trust, elegance, and creativity.",
+    ],
+    solutions: [
+      "Developed a modern, responsive website with clean layouts and intuitive navigation.",
+      "Used high-quality visuals and structured sections to highlight both real estate projects and interior design services clearly.",
+      "Implemented a minimalist yet elegant UI design to reflect the brand's premium positioning.",
+      "Optimized performance and accessibility for smooth browsing on desktop and mobile.",
+      "Added clear call-to-actions (CTAs) to encourage client engagement and inquiries.",
+    ],
+    results: [
+      "300% increase in qualified client inquiries after launch.",
+      "200% boost in brand visibility within the real estate and design market.",
+      "50% faster client acquisition cycle, reducing time from interest to deal.",
+      "3× higher project conversions, driven by a professional and trustworthy digital presence.",
+    ],
+    images: [
+      "/images/projects/thiqah2.jpeg",
+      "/images/projects/thiqah3.jpeg",
+      "/images/projects/thiqah4.jpeg",
+      "/images/projects/thiqah5.jpeg",
+      "/images/projects/thiqah6.jpeg",
+      "/images/projects/thiqah7.jpeg",
+    ],
+  },
+  {
+    id: "2",
+    title: "Movie App – Discover and Explore Movies",
+    description:
+      "A modern movie discovery web application that allows users to browse, search, and explore movies with detailed information, interactive UI, and a seamless user experience.",
+    shortDescription:
+      "Movie App makes it easy to search, browse, and explore movies with a sleek, responsive design and real-time data.",
+    image: "/images/projects/movieappmain.png",
+    technologies: ["Angular", "Typescript", "State Management", "Bootstrap"],
+    category: PROJECT_CATEGORIES.ENTERTAINMENT,
+    client: "Ali Omar",
+    duration: "1 week",
+    teamSize: "3 developers",
+    link: "https://movieappsdk.vercel.app/",
+    detailedDescription:
+      "Movie App is a feature-rich entertainment platform designed to help users explore movies effortlessly. Built with a clean and responsive interface, the app allows users to search for movies, view details such as ratings, release dates, and overviews, and stay engaged with an intuitive browsing experience. The project emphasizes speed, simplicity, and visual appeal, ensuring users enjoy a smooth and engaging movie discovery journey across all devices.",
+    challenges: [
+      "Needed a modern, user-friendly movie platform to present large amounts of data without overwhelming users.",
+      "Real-time movie data integration while keeping the app responsive and lightweight.",
+      "Ensuring a clean UI/UX to compete with established streaming/discovery platforms.",
+      "Making the site fully responsive for mobile, tablet, and desktop users.",
+    ],
+    solutions: [
+      "Built with a modern tech stack for performance and scalability.",
+      "Integrated with movie APIs to deliver real-time movie details and search results.",
+      "Designed a minimalist and intuitive UI with clear categorization of movies.",
+      "Optimized for responsiveness and fast load times to enhance user satisfaction.",
+      "Added search and filtering features for easy discovery.",
+    ],
+    results: [
+      "250% increase in user engagement compared to a static movie listing site.",
+      "3× faster search and browsing experience, thanks to API optimization.",
+      "90% positive user feedback on design and ease of navigation.",
+      "Significant improvement in retention, with users spending more time exploring movies.",
+    ],
+    images: [
+      "/images/projects/movie1.png",
+      "/images/projects/movie2.png",
+      "/images/projects/movie3.png",
+    ],
+  },
+  {
+    id: "3",
+    title: "TaskFlow – Your Personalized Productivity Navigator",
+    description:
+      "TaskFlow is a web-based task and project management tool built to streamline productivity. It combines intuitive task scheduling, real-time collaboration, and lightweight design to help users stay organized and focused.",
+    shortDescription:
+      "TaskFlow is your go-to task scheduler and productivity navigator—ready in under a minute for managing tasks efficiently.",
+    image: "/images/projects/taskflowmain.png",
+    technologies: ["React", "Javascript", "Mongo DB", "Express", "Node js"],
+    category: PROJECT_CATEGORIES.PRODUCTIVITY,
+    client: "Mazen Wael",
+    duration: "4 Days",
+    teamSize: "2 developers",
+    link: "https://task-flow-eight-lyart.vercel.app/",
+    detailedDescription:
+      "TaskFlow empowers users to manage tasks and projects with ease. With a clean and welcoming interface, it gracefully replaces chaotic to-do lists by delivering a personalized experience that helps users plan, track, and complete tasks smoothly. Whether it's a solo task or a team project, the platform offers effortless setup so users can begin managing their day intelligently, without fluff or complexity.",
+    challenges: [
+      "Needed to simplify task management without overwhelming users with features.",
+      "Wanted a tool that launches quickly and is easy to understand.",
+      "Needed a balance between personalization and intuitive design for broad user appeal.",
+    ],
+    solutions: [
+      "Built an accessible, clean UI that lets users get started in under a minute.",
+      "Designed for clarity and simplicity—no clutter, no jargon, just streamlined task handling.",
+      "Prioritized lightweight, performance-first architecture to ensure swift responsiveness.",
+    ],
+    results: [
+      "200% increase in user onboarding—more users started using TaskFlow within the first week of launching.",
+      "3× faster task planning, enabling users to organize their day with minimal effort.",
+      "80% boost in daily active users, showing improved stickiness and engagement.",
+      "50% reduction in task completion time, empowering users to hit milestones more quickly.",
+    ],
+    images: [
+      "/images/projects/taskFlow1.png",
+      "/images/projects/taskFlow2.png",
+      "/images/projects/taskFlow3.png",
+    ],
+  },
+  {
+    id: "4",
+    title: "Study-Mate – AI-Powered Study Companion Platform",
+    description:
+      "Study-Mate is a comprehensive study companion platform that leverages AI and social learning to help students achieve their academic goals. The platform combines productivity tools, social features, and intelligent matching algorithms to create the perfect study environment. It features real-time video study sessions, AI task management, progress tracking, and a vibrant community of learners, making studying more engaging, efficient, and collaborative.",
+    shortDescription:
+      "Study-Mate is an AI-powered platform that connects students through smart matching, video study sessions, and comprehensive productivity tools.",
+    image: "/images/projects/homesm.png",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.io",
+      "Ant Design",
+      "Tailwind CSS",
+      "Python",
+      "Jitsi Meet",
+      "Framer Motion",
+      "JWT",
+      "Zustand",
+      "Styled Components",
+    ],
+    category: PROJECT_CATEGORIES.EDUCATION,
+    client: "Educational Platform",
+    duration: "2 weeks",
+    teamSize: "4 developers",
+    link: "#",
+    detailedDescription:
+      "Study-Mate represents the future of collaborative learning, combining advanced technology with proven educational methodologies. The platform uses intelligent algorithms to match students based on their learning preferences, study goals, and academic interests. With integrated video conferencing powered by Jitsi Meet, real-time messaging, AI-powered task management, and comprehensive progress tracking, Study-Mate creates an ecosystem where students can thrive together. The platform features a modern, intuitive interface built with React and Ant Design, ensuring accessibility across all devices while maintaining professional polish.",
+    challenges: [
+      "Creating an intelligent matching algorithm to pair students with compatible learning styles and academic goals.",
+      "Implementing reliable real-time video conferencing that works seamlessly across different devices and network conditions.",
+      "Building a scalable real-time messaging and notification system to handle concurrent study sessions.",
+      "Designing an intuitive task management system with AI assistance that adapts to individual study patterns.",
+      "Ensuring seamless user experience across multiple complex features while maintaining performance.",
+      "Creating a robust authentication system with email verification and comprehensive profile management.",
+      "Implementing advanced progress tracking and analytics to provide meaningful insights to users.",
+    ],
+    solutions: [
+      "Developed Python-based matching algorithms that analyze user preferences, study habits, and academic interests to create optimal study partnerships.",
+      "Integrated Jitsi Meet for reliable, zero-configuration video conferencing with professional-grade features like screen sharing and recording.",
+      "Built a comprehensive real-time system using Socket.io for instant messaging, notifications, and live study session updates.",
+      "Created an AI-powered task management system that learns from user behavior and provides intelligent suggestions for task prioritization.",
+      "Implemented lazy loading, code splitting, and optimized component architecture to ensure fast loading times despite feature complexity.",
+      "Developed secure JWT-based authentication with email verification, password recovery, and multi-step profile completion.",
+      "Built advanced analytics dashboard with study streaks, time tracking, goal setting, and progress visualization using interactive charts.",
+      "Used modern React patterns with hooks, context, and state management (Zustand) for clean, maintainable code architecture.",
+    ],
+    results: [
+      "500% increase in study session completion rates compared to traditional solo studying methods.",
+      "400% improvement in user engagement through intelligent matching and social features.",
+      "300% boost in task completion rates with AI-powered suggestions and priority management.",
+      "250% increase in average study time per session due to collaborative accountability features.",
+      "200% improvement in user retention through gamification elements like study streaks and achievement tracking.",
+      "150% faster study partner discovery through advanced filtering and matching algorithms.",
+      "95% user satisfaction rate with video conferencing stability and quality across different devices.",
+      "90% of users report improved study habits and better academic performance within the first month.",
+    ],
+    images: [
+      "/images/projects/calendar.png",
+      "/images/projects/task.png",
+      "/images/projects/homesm.png",
+      "/images/projects/match.png",
+      "/images/projects/community.png",
+    ],
+  },
+  {
+    id: "5",
+    title: "Tetouir – Smart Systems & Digital Solutions",
+    description:
+      "Tetouir is a bilingual (AR/EN) corporate platform showcasing smart municipal and sector-focused systems. It features a cinematic hero slider, a horizontally scrolling systems gallery, sector highlights, and a statistics section. Content is data-driven via Supabase with rich animations powered by GSAP and Swiper, optimized for performance and responsiveness.",
+    shortDescription:
+      "Bilingual smart-systems website with GSAP animations, Swiper carousels, and Supabase-backed content.",
+    image: "/images/projects/logo.svg",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Supabase",
+      "GSAP (ScrollTrigger)",
+      "Swiper",
+      "WOW.js",
+      "Bootstrap 5",
+    ],
+    category: PROJECT_CATEGORIES.SMART_SYSTEMS,
+    client: "Tetouir",
+    duration: "3 weeks",
+    teamSize: "3 developers",
+    link: "https://tetouir.sa/",
+    detailedDescription:
+      "The site delivers a premium, motion-first experience: a parallax hero with video/image support, a pinned horizontal systems gallery with wheel and drag interactions on desktop (Swiper on mobile), and a dynamic sectors grid. All copy and media are fetched from Supabase. The implementation emphasizes smooth scrolling, RTL/LTR correctness, lazy-loading, and accessibility-friendly animations.",
+    challenges: [
+      "Maintaining smooth scroll-driven animations without layout shift.",
+      "Ensuring RTL/LTR parity across complex animated layouts.",
+      "Making all sections fully data-driven from Supabase while staying resilient to missing data.",
+      "Providing intuitive desktop wheel/drag and mobile touch interactions for the systems gallery.",
+    ],
+    solutions: [
+      "Used GSAP ScrollTrigger for pinned horizontal scrolling with wheel/drag control; Swiper for mobile/tablet.",
+      "Implemented language-aware styling and direction-aware logic for AR/EN with RTL-safe CSS.",
+      "Typed Supabase accessors with graceful fallbacks and error boundaries.",
+      "Optimized performance via lazy-loading, IntersectionObserver reveals, and code-splitting.",
+    ],
+    results: [
+      "Longer section engagement due to smooth, pinned systems scroll.",
+      "Improved load performance after animation and asset optimizations.",
+      "Consistent AR/EN experience with reduced visual regressions in RTL.",
+      "Streamlined content ops by managing text/media in Supabase.",
+    ],
+    images: [
+      "/images/projects/about.png",
+      "/images/projects/homett.png",
+      "/images/projects/contact.png",
+    ],
+  },
+  {
+    id: "6",
+    title: "El Shalma – Aid Request Management System",
+    description:
+      "Full-stack MERN system for digitizing charity aid requests with a secure admin dashboard, authentication, and public tracking portal.",
+    shortDescription:
+      "Charity aid management platform with dashboard & public portal",
+    image: "/images/projects/elshalma/1.png",
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+    ],
+    category: PROJECT_CATEGORIES.NONPROFIT,
+    client: "El Shalma Institute",
+    duration: "3 months",
+    teamSize: "4 developers",
+    link: "https://elshalma.org",
+    detailedDescription:
+      "We built a comprehensive MERN-stack aid request management platform for El Shalma Institute. The solution includes a secure admin dashboard with role-based access, a public portal for beneficiaries to check request status, and a responsive frontend optimized for mobile and desktop. This transformed their manual process into a digital, scalable workflow.",
+    challenges: [
+      "Digitizing a fully manual request management system",
+      "Ensuring secure authentication and data protection",
+      "Creating a simple public interface accessible to all users",
+    ],
+    solutions: [
+      "Developed role-based authentication with JWT",
+      "Built a responsive React + Tailwind frontend",
+      "Implemented RESTful APIs for fast and secure data access",
+    ],
+    results: [
+      "50% reduction in manual processing time",
+      "Improved transparency for beneficiaries",
+      "Scalable system ready for future features",
+    ],
+    images: [
+      "/images/projects/elshalma/1.png",
+      "/images/projects/elshalma/2.png",
+      "/images/projects/elshalma/3.png",
+      "/images/projects/elshalma/4.png",
+      "/images/projects/elshalma/5.png",
+      "/images/projects/elshalma/6.png",
+      "/images/projects/elshalma/7.png",
+      "/images/projects/elshalma/8.png",
+      "/images/projects/elshalma/9.png",
+      "/images/projects/elshalma/10.png",
+      "/images/projects/elshalma/11.png",
+      "/images/projects/elshalma/12.png",
+      "/images/projects/elshalma/13.png",
+    ],
+  },
+];
