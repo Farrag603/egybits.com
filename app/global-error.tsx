@@ -36,10 +36,11 @@ const GlobalError = ({
             >
               Try again
             </button>
-            <Link href="/">
-              <a style={{ color: "blue", textDecoration: "underline" }}>
-                Go back home
-              </a>
+            <Link
+              href="/"
+              style={{ color: "blue", textDecoration: "underline" }}
+            >
+              Go back home
             </Link>
           </div>
         </div>
