@@ -60,47 +60,6 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    title: "Movie App – Discover and Explore Movies",
-    description:
-      "A modern movie discovery web application that allows users to browse, search, and explore movies with detailed information, interactive UI, and a seamless user experience.",
-    shortDescription:
-      "Movie App makes it easy to search, browse, and explore movies with a sleek, responsive design and real-time data.",
-    image: "/images/projects/movieappmain.png",
-    technologies: ["Angular", "Typescript", "State Management", "Bootstrap"],
-    category: PROJECT_CATEGORIES.ENTERTAINMENT,
-    client: "Ali Omar",
-    duration: "1 week",
-    teamSize: "3 developers",
-    link: "https://movieappsdk.vercel.app/",
-    detailedDescription:
-      "Movie App is a feature-rich entertainment platform designed to help users explore movies effortlessly. Built with a clean and responsive interface, the app allows users to search for movies, view details such as ratings, release dates, and overviews, and stay engaged with an intuitive browsing experience. The project emphasizes speed, simplicity, and visual appeal, ensuring users enjoy a smooth and engaging movie discovery journey across all devices.",
-    challenges: [
-      "Needed a modern, user-friendly movie platform to present large amounts of data without overwhelming users.",
-      "Real-time movie data integration while keeping the app responsive and lightweight.",
-      "Ensuring a clean UI/UX to compete with established streaming/discovery platforms.",
-      "Making the site fully responsive for mobile, tablet, and desktop users.",
-    ],
-    solutions: [
-      "Built with a modern tech stack for performance and scalability.",
-      "Integrated with movie APIs to deliver real-time movie details and search results.",
-      "Designed a minimalist and intuitive UI with clear categorization of movies.",
-      "Optimized for responsiveness and fast load times to enhance user satisfaction.",
-      "Added search and filtering features for easy discovery.",
-    ],
-    results: [
-      "250% increase in user engagement compared to a static movie listing site.",
-      "3× faster search and browsing experience, thanks to API optimization.",
-      "90% positive user feedback on design and ease of navigation.",
-      "Significant improvement in retention, with users spending more time exploring movies.",
-    ],
-    images: [
-      "/images/projects/movie1.png",
-      "/images/projects/movie2.png",
-      "/images/projects/movie3.png",
-    ],
-  },
-  {
-    id: "3",
     title: "TaskFlow – Your Personalized Productivity Navigator",
     description:
       "TaskFlow is a web-based task and project management tool built to streamline productivity. It combines intuitive task scheduling, real-time collaboration, and lightweight design to help users stay organized and focused.",
@@ -138,7 +97,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "4",
+    id: "3",
     title: "Study-Mate – AI-Powered Study Companion Platform",
     description:
       "Study-Mate is a comprehensive study companion platform that leverages AI and social learning to help students achieve their academic goals. The platform combines productivity tools, social features, and intelligent matching algorithms to create the perfect study environment. It features real-time video study sessions, AI task management, progress tracking, and a vibrant community of learners, making studying more engaging, efficient, and collaborative.",
@@ -205,7 +164,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "5",
+    id: "4",
     title: "Tetouir – Smart Systems & Digital Solutions",
     description:
       "Tetouir is a bilingual (AR/EN) corporate platform showcasing smart municipal and sector-focused systems. It features a cinematic hero slider, a horizontally scrolling systems gallery, sector highlights, and a statistics section. Content is data-driven via Supabase with rich animations powered by GSAP and Swiper, optimized for performance and responsiveness.",
@@ -253,7 +212,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "6",
+    id: "5",
     title: "El Shalma – Aid Request Management System",
     description:
       "Full-stack MERN system for digitizing charity aid requests with a secure admin dashboard, authentication, and public tracking portal.",
