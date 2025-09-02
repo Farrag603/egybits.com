@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import styles from "./ProjectModal.module.sass";
 
@@ -9,6 +9,26 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const navigateImage = useCallback(
+    (direction: "prev" | "next") => {
+      if (!project.images?.length) return;
+
+      if (direction === "prev") {
+        setCurrentImageIndex((prev) =>
+          prev === 0 ? project.images.length - 1 : prev - 1
+        );
+      } else {
+        setCurrentImageIndex((prev) =>
+          prev === project.images.length - 1 ? 0 : prev + 1
+        );
+      }
+    },
+    [project.images?.length]
+  );
+
   useEffect(() => {
     // Disable body scroll when modal is open
     document.body.style.overflow = "hidden";
@@ -18,6 +38,39 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       document.body.style.overflow = "unset";
     };
   }, []);
+
+  // Handle keyboard events for lightbox
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+
+      switch (e.key) {
+        case "Escape":
+          setLightboxOpen(false);
+          break;
+        case "ArrowLeft":
+          e.preventDefault();
+          navigateImage("prev");
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          navigateImage("next");
+          break;
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, [lightboxOpen, navigateImage]);
+
+  const openLightbox = (imageIndex: number) => {
+    setCurrentImageIndex(imageIndex);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -55,22 +108,35 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               {/* Project Images */}
               {project.images?.map((image: string, index: number) => (
                 <div key={index} className={styles.mediaItem}>
-                  <div className={styles.imagePlaceholder}>
-                    <div className={styles.iconContainer}>
-                      <svg
-                        className={styles.icon}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                      <p>Screenshot {index + 1}</p>
+                  <div
+                    className={styles.imageContainer}
+                    onClick={() => openLightbox(index)}
+                  >
+                    <Image
+                      src={image}
+                      alt={`${project.title} - Screenshot ${index + 1}`}
+                      width={400}
+                      height={300}
+                      className={styles.projectImage}
+                      priority={false}
+                    />
+                    <div className={styles.imageOverlay}>
+                      <p className={styles.imageCaption}>
+                        Screenshot {index + 1}
+                      </p>
+                      <div className={styles.clickHint}>
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          <path d="M10 10l4 4m0-4l-4 4" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -180,6 +246,82 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && project.images && (
+        <div className={styles.lightboxBackdrop} onClick={closeLightbox}>
+          <div
+            className={styles.lightboxContainer}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className={styles.lightboxClose} onClick={closeLightbox}>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <div className={styles.lightboxImageContainer}>
+              <Image
+                src={project.images[currentImageIndex]}
+                alt={`${project.title} - Screenshot ${currentImageIndex + 1}`}
+                width={1200}
+                height={800}
+                className={styles.lightboxImage}
+                priority={true}
+              />
+            </div>
+
+            {/* Navigation buttons */}
+            {project.images.length > 1 && (
+              <>
+                <button
+                  className={`${styles.navButton} ${styles.navPrev}`}
+                  onClick={() => navigateImage("prev")}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  className={`${styles.navButton} ${styles.navNext}`}
+                  onClick={() => navigateImage("next")}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                  </svg>
+                </button>
+              </>
+            )}
+
+            {/* Image counter */}
+            <div className={styles.imageCounter}>
+              {currentImageIndex + 1} of {project.images.length}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

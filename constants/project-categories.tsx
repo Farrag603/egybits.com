@@ -3,16 +3,18 @@
 // ============================================
 
 export const PROJECT_CATEGORIES = {
-  WEB_APP: "Web Application",
-  MOBILE_APP: "Mobile App",
-  WEB_PLATFORM: "Web Platform",
-  HEALTHCARE: "Healthcare",
-  ENTERPRISE: "Enterprise",
-  AI_ML: "AI/ML",
-  FINTECH: "FinTech",
+  REAL_ESTATE: "Real Estate & Design",
+  ENTERTAINMENT: "Entertainment",
+  PRODUCTIVITY: "Productivity",
+  EDUCATION: "Education & Learning",
+  SMART_SYSTEMS: "Smart Systems",
+  NONPROFIT: "Non-Profit & Charity",
   ECOMMERCE: "E-Commerce",
-  EDUCATION: "Education",
-  REAL_ESTATE: "Real Estate",
+  FINTECH: "FinTech",
+  HEALTHCARE: "Healthcare",
+  AI_ML: "AI/ML",
+  MOBILE_APP: "Mobile App",
+  ENTERPRISE: "Enterprise",
 } as const;
 
 export type ProjectCategory =
